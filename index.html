@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Base Converter</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+    <h1>Base Converter</h1>
+    <p>Simple base converter with multiple formats.</p>
+    <hr>
+  </header>
+  <main>
+    <p>Select an input field and choose the formats you want.</p>
+    <div class="format-chooser" id="from-chooser">
+      <span>DEC</span>
+      <span>HEX</span>
+      <span>OCT</span>
+      <span class="hl-mono">BIN</span>
+    </div>
+    <input type="text" id="from" name="from">
+    <div class="format-chooser" id="to-chooser">
+      <span>BIN</span>
+      <span>OCT</span>
+      <span>HEX</span>
+      <span class="hl-mono">DEC</span>
+    </div>
+    <input type="text" id="to" name="to">
+
+    <br>
+    <br>
+    <h3>About the Formats</h3>
+    <p>Read about the different formats and their common uses.</p>
+    <br>
+
+    <details>
+      <summary><span class="hl-mono">BIN</span> Binary</summary>
+      <div>
+        <p>
+          Select any of the input fields and choose the formats you want.
+        </p>
+      </div>
+    </details>
+
+    <details>
+      <summary><span class="hl-mono">OCT</span> Octal</summary>
+      <div>
+        <p>
+          Select any of the input fields and choose the formats you want.
+        </p>
+      </div>
+    </details>
+
+    <details>
+      <summary><span class="hl-mono">HEX</span> Hexadecimal</summary>
+      <div>
+        <p>
+          Select any of the input fields and choose the formats you want.
+        </p>
+      </div>
+    </details>
+
+    <details>
+      <summary><span class="hl-mono">DEC</span> Decimal</summary>
+      <div>
+        <p>
+          Select any of the input fields and choose the formats you want.
+        </p>
+      </div>
+    </details>
+
+  </main>
+  <footer>
+    <hr>
+    <small>Created by <a href="https://github.com/tonysln">Anton</a></small>
+  </footer>
+  <script src="app.js"></script>
+</body>
+
+</html>
