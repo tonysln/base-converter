@@ -86,10 +86,10 @@ input.wrong-input {
   font-family: monospace;
   float: right;
   margin-bottom: 0.7em;
+  user-select: none;
 }
 
 .format-chooser span {
-  user-select: none;
   cursor: pointer;
   font-size: 120%;
   margin: 0em 0.1em;
