@@ -86,6 +86,7 @@ input.wrong-input {
   font-family: monospace;
   float: right;
   margin-bottom: 0.7em;
+  margin-top: 0.3em;
   user-select: none;
 }
 
