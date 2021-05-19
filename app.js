@@ -19,6 +19,19 @@ function clearErrors() {
   toInput.classList.remove('wrong-input');
 }
 
+function fromInputEventHandler(e) {
+  clearErrors();
+  let val = fromInput.value.toLowerCase().trim();
+  toInput.value = convert(from, to, val, fromAllowed, toAllowed);
+}
+
+function toInputEventHandler(e) {
+  clearErrors();
+  let val = toInput.value.toLowerCase().trim();
+  fromInput.value = convert(to, from, val, toAllowed, fromAllowed);
+}
+
+
 // DOM elements
 const fromInput = document.getElementById('from');
 const fromChooser = document.getElementById('from-chooser');
@@ -37,14 +50,14 @@ let fromAllowed = allowedChars.get(from);
 let to = 'dec';
 let toAllowed = allowedChars.get(to);
 
-// TODO convert on format change
-
 // Change format of 'from' field
 fromChooser.childNodes.forEach(node => {
   node.addEventListener('click', (e) => {
     from = node.textContent.toLowerCase();
     fromAllowed = allowedChars.get(from);
     moveHighlight(node);
+    fromInputEventHandler();
+    toInputEventHandler();
   });
 });
 
@@ -54,25 +67,12 @@ toChooser.childNodes.forEach(node => {
     to = node.textContent.toLowerCase();
     toAllowed = allowedChars.get(to);
     moveHighlight(node);
+    fromInputEventHandler();
+    toInputEventHandler();
   });
 });
 
 // Handle 'from' input 
-fromInput.addEventListener('input', (e) => {
-  clearErrors();
-  let val = fromInput.value.toLowerCase().trim();
-
-  if (e.target === document.activeElement) {
-    toInput.value = convert(from, to, val, fromAllowed, toAllowed);
-  }
-});
-
+fromInput.addEventListener('input', fromInputEventHandler);
 // Handle 'to' input
-toInput.addEventListener('input', (e) => {
-  clearErrors();
-  let val = toInput.value.toLowerCase().trim();
-
-  if (e.target === document.activeElement) {
-    fromInput.value = convert(to, from, val, toAllowed, fromAllowed);
-  }
-});
+toInput.addEventListener('input', toInputEventHandler);
