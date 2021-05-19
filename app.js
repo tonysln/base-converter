@@ -27,15 +27,17 @@ const toChooser = document.getElementById('to-chooser');
 
 // Init allowed chars for each format
 let allowedChars = new Map();
-allowedChars.set('bin', '10');
+allowedChars.set('bin', '01');
 allowedChars.set('dec', '0123456789');
 allowedChars.set('oct', '01234567');
-allowedChars.set('hex', '0123456789abcdefABCDEF');
+allowedChars.set('hex', '0123456789abcdef');
 
 let from = 'bin';
 let fromAllowed = allowedChars.get(from);
 let to = 'dec';
 let toAllowed = allowedChars.get(to);
+
+// TODO convert on format change
 
 // Change format of 'from' field
 fromChooser.childNodes.forEach(node => {
@@ -58,13 +60,19 @@ toChooser.childNodes.forEach(node => {
 // Handle 'from' input 
 fromInput.addEventListener('input', (e) => {
   clearErrors();
-  let val = fromInput.value;
-  toInput.value = convert(from, to, val, fromAllowed);
+  let val = fromInput.value.toLowerCase().trim();
+
+  if (e.target === document.activeElement) {
+    toInput.value = convert(from, to, val, fromAllowed, toAllowed);
+  }
 });
 
 // Handle 'to' input
 toInput.addEventListener('input', (e) => {
   clearErrors();
-  let val = toInput.value;
-  fromInput.value = convert(to, from, val, toAllowed);
+  let val = toInput.value.toLowerCase().trim();
+
+  if (e.target === document.activeElement) {
+    fromInput.value = convert(to, from, val, toAllowed, fromAllowed);
+  }
 });
