@@ -1,6 +1,6 @@
 # Base Converter
 
-![Screenshot](https://user-images.githubusercontent.com/20811603/118798878-ce4a7480-b8a6-11eb-8955-1ee5a1eda6ba.png)
+Simple base converter with multiple formats.
 
 ## Features
 
