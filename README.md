@@ -18,6 +18,5 @@ Using vanilla JavaScript, simple HTML & CSS.
 
 ## To-Do
 
-- [ ] Finish the 'About the Formats' block.
-- [x] Add support for fractional numbers.
+- [ ] Improve the 'About the Formats' block.
 - [ ] Add support for ASCII.

@@ -60,6 +60,15 @@ hr {
   border: 1px solid rgb(82, 82, 82, 0.5);
 }
 
+.mono {
+  font-family: monospace;
+  font-size: 120%;
+  background-color: #fafafa;
+  padding: 0.1em 0.3em;
+  border-radius: 4px;
+  border: 1px solid rgba(147, 147, 147, 0.5);
+}
+
 input {
   font-family: monospace;
   font-size: 3.8em;
@@ -121,4 +130,12 @@ details summary:focus {
 
 details div {
   margin-top: 0.6em;
+}
+
+details div p {
+  margin-bottom: 0.5em;
+}
+
+details div p:last-child {
+  margin-bottom: 0;
 }
