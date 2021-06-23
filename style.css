@@ -139,3 +139,10 @@ details div p {
 details div p:last-child {
   margin-bottom: 0;
 }
+
+#ascii-result {
+  background-color: #f0f2f5;
+  font-family: monospace;
+  font-size: 120%;
+  padding: 0.4em;
+}

@@ -23,6 +23,9 @@ function fromInputEventHandler(e) {
   clearErrors();
   let val = fromInput.value.toLowerCase().trim();
   toInput.value = convert(from, to, val, fromAllowed, toAllowed);
+
+  // Also handle ASCII in case the block is open
+  asciiHandler(e);
 }
 
 function toInputEventHandler(e) {
@@ -31,12 +34,28 @@ function toInputEventHandler(e) {
   fromInput.value = convert(to, from, val, toAllowed, fromAllowed);
 }
 
+function asciiHandler(e) {
+  if (asciiBlock.open) {
+    const vals = fromInput.value.split(' ');
+    for (val of vals) {
+      if (val) {
+        // TODO: make sure val is in decimal
+        // asciiResult.textContent += String.fromCharCode(parseInt(val));
+      }
+    }
+  } else {
+    asciiResult.textContent = '';
+  }
+}
+
 
 // DOM elements
 const fromInput = document.getElementById('from');
 const fromChooser = document.getElementById('from-chooser');
 const toInput = document.getElementById('to');
 const toChooser = document.getElementById('to-chooser');
+const asciiBlock = document.getElementById('ascii-block');
+let asciiResult = document.getElementById('ascii-result');
 
 // Init allowed chars for each format
 let allowedChars = new Map();
@@ -76,3 +95,5 @@ toChooser.childNodes.forEach(node => {
 fromInput.addEventListener('input', fromInputEventHandler);
 // Handle 'to' input
 toInput.addEventListener('input', toInputEventHandler);
+// Decode ASCII
+asciiBlock.addEventListener('toggle', asciiHandler);

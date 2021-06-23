@@ -18,5 +18,4 @@ Using vanilla JavaScript, simple HTML & CSS.
 
 ## To-Do
 
-- [ ] Improve the 'About the Formats' block.
 - [ ] Add support for ASCII.

@@ -15,7 +15,7 @@ function convert(from, to, value, fromAllowed, toAllowed) {
 
     // Current char is illegal (except a single dot on index > 0)
     // TODO probably refactor this
-    if (!fromAllowed.concat(['.']).includes(c) || tooManyDots || value[0] === '.') {
+    if (!fromAllowed.concat(['.', ' ']).includes(c) || tooManyDots || value[0] === '.') {
       document.activeElement.classList.add('wrong-input');
       return '';
     }
@@ -28,6 +28,8 @@ function convert(from, to, value, fromAllowed, toAllowed) {
   if (from === to) {
     return value;
   }
+
+  value = value.replaceAll(' ', '');
 
   // DEC -> BIN, HEX, OCT
   if (from === 'dec') {
