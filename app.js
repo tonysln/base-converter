@@ -35,16 +35,18 @@ function toInputEventHandler(e) {
 }
 
 function asciiHandler(e) {
+  asciiResult.textContent = '';
   if (asciiBlock.open) {
     const vals = fromInput.value.split(' ');
     for (val of vals) {
       if (val) {
-        // TODO: make sure val is in decimal
-        // asciiResult.textContent += String.fromCharCode(parseInt(val));
+        const convertedValue = convert(from, 'dec', val, fromAllowed, allowedChars.get('dec'));
+        asciiResult.textContent += String.fromCharCode(parseInt(convertedValue));
       }
     }
+    toInput.style.opacity = 0.5;
   } else {
-    asciiResult.textContent = '';
+    toInput.style.opacity = 1;
   }
 }
 

@@ -10,12 +10,10 @@ Supported formats (both ways):
 - Hexadecimal
 - Octal
 
-Fractions are supported up to a certain precision.
+Separate values with spaces to decode them into ASCII.
+
+*Fractions are supported up to a certain precision.*
 
 Featuring a clean and simple interface.
 
 Using vanilla JavaScript, simple HTML & CSS.
-
-## To-Do
-
-- [ ] Add support for ASCII.
